@@ -8,10 +8,15 @@ import EventsSearch from '../../components/events/events-search';
 function AllEventsPage() {
 
     const events = getAllEvents();
+    const router = useRouter()
 
+    function findEventsHandler(year, month) {
+        const fullPath = `/events/${year}/${month}`;
+        router.push(fullPath)
+    }
     return (
         <Fragment>
-            <EventsSearch />
+            <EventsSearch onSearch={findEventsHandler} />
             <EventList items={events} />
         </Fragment>
     );
