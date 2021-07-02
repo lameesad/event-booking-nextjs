@@ -1,4 +1,8 @@
-export default function HomePage() {
+import { getFeaturedEvents } from '../dummy-data'
+
+function HomePage() {
+  const featuredEvents = getFeaturedEvents();
+
   return (
     <div>
       <h1>The Home Page</h1>
