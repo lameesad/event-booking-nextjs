@@ -9,7 +9,7 @@ function NewsletterRegistration() {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
-    // fetch data
+
     fetch('/api/newsletter', {
       method: 'POST',
       body: JSON.stringify({ email: enteredEmail }),
