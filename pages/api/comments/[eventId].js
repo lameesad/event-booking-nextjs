@@ -2,7 +2,7 @@
 
 async function handler(req, res) {
     const eventId = req.query.eventId;
-
+    console.log(eventId)
 
     if (req.method === 'POST') {
         const { email, name, text } = req.body;
@@ -15,7 +15,7 @@ async function handler(req, res) {
             text.trim() === ''
         ) {
             res.status(422).json({ message: 'Invalid input.' });
-            client.close();
+
             return;
         }
 
@@ -38,7 +38,7 @@ async function handler(req, res) {
         res.status(200).json({ comments: dummyList })
     }
 
-    client.close();
+
 }
 
 export default handler;
